@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Catalog from './components/catalog';
-import logo from './logo.svg';
+import Catalog from './components/Catalog';
 import './App.css';
 
 class App extends Component {
