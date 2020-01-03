@@ -6,7 +6,8 @@ class catalog extends Component {
         let output = <div><h2>{title}</h2></div>; 
         let message;
         let today = new Date().getDay();
-
+        {// This is a comment}
+        {/* This is a comment, too */}
         if (today == 0) {
             message = <div className="sorry">We are closed on Sunday...</div>;
         } else {
