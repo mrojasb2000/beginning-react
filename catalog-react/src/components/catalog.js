@@ -14,11 +14,21 @@ class Catalog extends Component {
         .catch(error => console.log(error));
     }
 
+    select(productCode) {
+        let productList = this.state.products.map(function(p){
+            if (p.code === productCode) {
+                p.selected = (!p.selected);
+            }
+            return p;
+        });
+        this.setState({products: productList});
+    }
+
     render() { 
        return <div>
-           <h2>Catalog</h2>
+           <h2>Wine Catalog</h2>
            <div className="ProductList">
-             <ProductList items={this.state.products}/>
+             <ProductList items={this.state.products} selectHandler={this.select.bind(this)}/>
            </div>
        </div>
     }

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+import './Product.css';
 
 class Product extends Component {
-    showPrice() {
-        alert(this.props.item.price);
-    }
     render() { 
-        let item = this.props.item;
-        return <li onClick={() => this.showPrice()}>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
+        let classToApply = this.props.item.selected? "selected": "";
+
+        return <li onClick={() => this.props.selectHandler(this.props.item.code)} className={classToApply}>
+            <h3>{this.props.item.name}</h3>
+            <p>{this.props.item.description}</p>
         </li>;
     }
 }
