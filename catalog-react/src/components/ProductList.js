@@ -4,20 +4,12 @@ import './ProductList.css'
 
 
 class ProductList extends Component {
-    constructor() {
-        super();
-        this.state = { products: [] };
-
-        fetch("products.json")
-        .then(response => response.json())
-        .then(json => {this.setState({products: json})})
-        .catch(error => console.log(error));
-    }
+   
    
     render() { 
         let productComponents = [];
 
-        for (let product of this.state.products){
+        for (let product of this.props.items){
             productComponents.push(<Product item={product}/>);
         }
 
