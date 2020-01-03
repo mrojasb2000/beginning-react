@@ -6,7 +6,9 @@ class catalog extends Component {
     render() { 
        return <div>
            <h2>Catalog</h2>
-           <ProductList />
+           <div className="ProductList">
+             <ProductList />
+           </div>
        </div>
     }
 }
